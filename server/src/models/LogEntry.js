@@ -39,7 +39,7 @@ const logSchema = new Schema({
         required: true,
         min: -180,
         max: 180
-    },
+    }
 
 }, {
     timestamps: true
