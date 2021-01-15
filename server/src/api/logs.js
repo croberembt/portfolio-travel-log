@@ -26,7 +26,7 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', async (req, res) => {
     const deleteLog = await LogEntry.findByIdAndDelete(req.params.id); 
     res.send(deleteLog); 
 });
