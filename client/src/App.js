@@ -46,7 +46,7 @@ const App = () => {
             </div>
             <div className='row'>
                 <div>
-                    <Button onClick={toggle}>HELLO CLICK ME PLEASE I AM A BUTTON</Button>
+                    <Button color='danger' onClick={toggle}>HELLO CLICK ME PLEASE I AM A BUTTON</Button>
                     <LogModalComponent isShowing={isShowing} hide={toggle} />
                 </div>
             </div>
