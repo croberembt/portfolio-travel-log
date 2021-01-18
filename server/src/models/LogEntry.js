@@ -8,26 +8,23 @@ const requiredString = {
 }; 
 
 const logSchema = new Schema({
-    title: requiredString, 
-    location: requiredString,
-    lodgings: requiredString, 
-    description: requiredString,
-    location_rating: {
+    title: {
+        requiredString,
+        minLength: 1,
+        maxLength: 30
+    }, 
+    description: {
+        requiredString,
+        minLength: 3,
+        maxLength: 280
+    },
+    vacation_rating: {
         type: Number,
         min: 0,
         max: 10,
         default: 5
     },
-    lodgings_rating: {
-        type: Number,
-        min: 0,
-        max: 10,
-        default: 5
-    },
-    image_one: String,
-    image_two: String,
-    image_three: String,
-    image_four: String,
+    image: String,
     latitude: {
         type: Number,
         required: true,

@@ -9,4 +9,16 @@ body {
     overflow: hidden; 
 }
 
+.log-image {
+    max-width: 200px;
+    height: auto;
+    width: auto; 
+    border-radius: 5%;
+}
+
+.log-details-popup {
+    max-width: 300px; 
+    max-height: 500px;
+}
+
 
