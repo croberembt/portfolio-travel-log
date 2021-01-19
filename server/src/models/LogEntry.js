@@ -2,21 +2,14 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose; 
 
-const requiredString = {
-    type: String, 
-    required: true
-}; 
-
 const logSchema = new Schema({
     title: {
-        requiredString,
-        minLength: 1,
-        maxLength: 30
+        type: String,
+        required: true
     }, 
     description: {
-        requiredString,
-        minLength: 3,
-        maxLength: 280
+        type: String,
+        required: true
     },
     vacation_rating: {
         type: Number,
