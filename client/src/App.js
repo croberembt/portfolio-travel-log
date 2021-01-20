@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'; 
 import { listLogEntries } from './api'; 
+import { Rating } from 'material-ui-rating'; 
 
 
 const App = () => {
@@ -75,8 +76,20 @@ const App = () => {
                                     <div className='container log-details-popup'>
                                         <div className='row'>
                                             <div className='col-md-6'>
+                                                <div>
+                                                    {entry.title}
+                                                </div>
+                                                <div>
+                                                    {entry.description}
+                                                </div>
+                                                <div>
+                                                    <Rating 
+                                                        value={entry.vacation_rating}
+                                                        max={10}
+                                                    />
+                                                </div>
                                                 <div style={{margin: '1rem', padding: '1rem'}}>
-                                                    <img alt={entry.title + 'image'} className='log-image' src={entry.image_one}></img>
+                                                    <img alt={entry.title + 'image'} className='log-image' src={entry.image}></img>
                                                 </div>
                                             </div>
                                         </div>
