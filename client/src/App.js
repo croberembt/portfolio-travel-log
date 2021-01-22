@@ -2,15 +2,19 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'; 
 import { listLogEntries } from './api'; 
+import LogEntryComponent from './components/LogEntryComponent'; 
+
+//implemented add marker component for double click
+//fixed svg offset for better appearance
 
 
 const App = () => {
 
     const [logEntries, setLogEntries] = useState([]); 
 
-    const [showPopup, setShowPopup] = useState({
+    const [showPopup, setShowPopup] = useState({}); 
 
-    }); 
+    const [addEntryLocation, setAddEntryLocation] = useState(null); 
     
     const [viewport, setViewport] = useState({
         width: '100vw',
@@ -26,7 +30,11 @@ const App = () => {
     }, []); 
 
     const showAddMarkerPopup = (event) => {
-        console.log(event); 
+        const [ longitude, latitude ] = event.lngLat; 
+        setAddEntryLocation({
+            latitude,
+            longitude
+        });
     };
 
     return (
@@ -44,6 +52,8 @@ const App = () => {
                             key={entry._id} 
                             latitude={entry.latitude} 
                             longitude={entry.longitude} 
+                            offsetLeft={-10}
+                            offsetTop={-25}
                         >
                             <div
                                 onClick={() => setShowPopup({
@@ -51,7 +61,7 @@ const App = () => {
                                 })}
                             >
                                 <svg 
-                                    className='map-marker' 
+                                    className='post-entry-marker' 
                                     alt='map marker' 
                                     viewBox='0 0 24 24' 
                                     width='20' 
@@ -102,6 +112,52 @@ const App = () => {
                         }
                     </>
                 ))
+            }
+            {
+                addEntryLocation ? (
+                    <>
+                        <Marker 
+                            latitude={addEntryLocation.latitude} 
+                            longitude={addEntryLocation.longitude} 
+                            offsetLeft={-10}
+                            offsetTop={-25}
+                        >
+                            <div>
+                                <svg 
+                                    className='pre-entry-marker' 
+                                    alt='map marker' 
+                                    viewBox='0 0 24 24' 
+                                    width='20' 
+                                    height='20' 
+                                    stroke='magenta' 
+                                    strokeWidth='3' fill='none' 
+                                    strokeLinecap='round' 
+                                    strokeLinejoin='round'>
+                                    <path d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'></path>
+                                    <circle cx='12' cy='10' r='3'></circle>
+                                </svg>
+                            </div>
+                        </Marker>
+                        <Popup
+                            dynamicPosition={true}
+                            latitude={addEntryLocation.latitude}
+                            longitude={addEntryLocation.longitude}
+                            closeButton={true}
+                            closeOnClick={false}
+                            onClose={() => setAddEntryLocation(null)}
+                            anchor='top'
+                        >
+                            <div className='container form-popup'>
+                                <div className='row'>
+                                    <div className='col'>
+                                        <LogEntryComponent />
+                                    </div>
+                                </div>
+                            </div>
+                        </Popup>
+                    </>
+                ) :
+                null
             }
         </ReactMapGL>
     ); 
