@@ -3,14 +3,26 @@ import { Form, Input, FormGroup } from 'reactstrap';
 
 const LogEntryComponent = () => {
     return (
-        <Form>
-            <FormGroup>
-                <Input type='text' name='form-title' id='form-title' placeholder='Put your vacation title here.' />
-                <Input type='textarea' name='form-description' placholder='Describe your vacation here...' />
-                <Input type='number' name='form-rating' placeholder='Rate your vacation with a number 1-10.' />
-                <Input type='text' name='form-image' placeholder='Input a link to your vacation photo here... ' />
-            </FormGroup>
-        </Form>
+        <div className='container'>
+            <div className='row'>
+                <div className='col'>
+                    <Form>
+                        <FormGroup style={{marginTop: '1.5rem'}}>
+                            <Input type='text' name='form-title' id='form-title' placeholder='Put your vacation title here.' />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='textarea' name='form-description' placholder='Describe your vacation here...' />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='number' name='form-rating' placeholder='Rate your vacation with a number 1-10.' />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type='text' name='form-image' placeholder='Input a link to your vacation photo here... ' />
+                        </FormGroup>
+                    </Form>
+                </div>
+            </div>
+        </div>
     );
 };
 
