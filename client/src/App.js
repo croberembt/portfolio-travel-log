@@ -4,6 +4,8 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { listLogEntries } from './api'; 
 import LogEntryComponent from './components/LogEntryComponent'; 
 
+// added submit button for entry form and added custom styling to post-entry popup 
+
 const App = () => {
 
     const [logEntries, setLogEntries] = useState([]); 
@@ -87,20 +89,21 @@ const App = () => {
                                         onClose={() => setShowPopup({})}
                                         anchor='top'
                                     >
-                                        <div className='container log-details-popup'>
+                                        <div className='container log-details-popup text-center'>
                                             <div className='row'>
-                                                <div className='col-md-6'>
-                                                    <div>
-                                                        {entry.title}
+                                                <div className='col'>
+                                                    <div style={{padding: '.5rem'}}>
+                                                        <h4>{entry.title}</h4>
                                                     </div>
-                                                    <div>
+                                                    <div style={{paddingTop: '1rem', paddingBottom: '.5rem'}}>
+                                                        <img alt={entry.title + 'image'} className='log-image' src={entry.image}></img>
+                                                    </div>
+                                                    <div style={{padding: '.5rem'}}>
                                                         {entry.description}
                                                     </div>
-                                                    <div>
-                                                        {entry.rating}
-                                                    </div>
-                                                    <div style={{margin: '1rem', padding: '1rem'}}>
-                                                        <img alt={entry.title + 'image'} className='log-image' src={entry.image}></img>
+                                                    <div style={{padding: '.5rem'}}>
+                                                        <div>Rating 1-10:</div>
+                                                        <h5 className='rating'>{entry.vacation_rating}</h5>
                                                     </div>
                                                 </div>
                                             </div>
