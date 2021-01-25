@@ -80,7 +80,6 @@ const App = () => {
                             {
                                 showPopup[entry._id] ? (
                                     <Popup
-                                        key={entry._id}
                                         dynamicPosition={true}
                                         latitude={entry.latitude}
                                         longitude={entry.longitude}
@@ -96,14 +95,14 @@ const App = () => {
                                                         <h4>{entry.title}</h4>
                                                     </div>
                                                     <div style={{paddingTop: '1rem', paddingBottom: '.5rem'}}>
-                                                        <img alt={entry.title + 'image'} className='log-image' src={entry.image}></img>
+                                                        <img alt={entry.title + ' image'} className='log-image' src={entry.image}></img>
                                                     </div>
                                                     <div style={{padding: '.5rem'}}>
                                                         {entry.description}
                                                     </div>
                                                     <div style={{padding: '.5rem'}}>
-                                                        <div>Rating 1-10:</div>
-                                                        <h5 className='rating'>{entry.vacation_rating}</h5>
+                                                        <div>Rating:</div>
+                                                        <h5 className='rating'>{entry.vacation_rating}/10</h5>
                                                     </div>
                                                 </div>
                                             </div>
