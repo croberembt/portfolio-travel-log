@@ -5,11 +5,11 @@ const { Schema } = mongoose;
 const logSchema = new Schema({
     title: {
         type: String,
-        required: true
+   
     }, 
     description: {
         type: String,
-        required: true
+   
     },
     vacation_rating: {
         type: Number,

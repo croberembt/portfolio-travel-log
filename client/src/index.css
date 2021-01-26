@@ -1,32 +1,40 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    height: 100vh;
-    width: 100vw; 
-    overflow: hidden; 
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  height: 100vh;
+  width: 100vw; 
+  overflow: hidden; 
 }
 
 .log-image {
-    max-width: 300px;
-    height: auto;
-    width: auto; 
-    border-radius: 5%;
+  max-width: 300px;
+  height: auto;
+  width: auto; 
+  border-radius: 5%;
 }
 
 .log-details-popup {
-    max-width: 350px; 
-    max-height: 500px;
+  max-width: 350px; 
+  max-height: 500px;
 }
 
 .popup-form {
-    width: 350px;
-    max-height: 500px;
+  width: 350px;
+  max-height: 500px;
 }
 
 .rating {
-    font-weight: bold;
+  font-weight: bold;
 }
 
+input {
+  border-radius: 5%;
+  margin: 1rem; 
+}
+
+button {
+  border-radius: 5%; 
+}
 
