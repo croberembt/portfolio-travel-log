@@ -3,9 +3,9 @@ import './index.css';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'; 
 import { listLogEntries } from './api'; 
 import LogEntryComponent from './components/LogEntryComponent'; 
+import { Card, CardBody, CardImg, CardTitle, CardSubtitle } from 'reactstrap'; 
 
-// added post method to api to handle the add entry form submission 
-// udpated tab size from 4 to 2 for readability 
+// redid styling on log entry form with bootstrap instead of reactstrap in order for it to be compatible with react-hook-form
 
 const App = () => {
 
@@ -21,11 +21,13 @@ const App = () => {
     zoom: 0
   }); 
 
+  const getEntries = async () => {
+    const logEntries = await listLogEntries();
+    setLogEntries(logEntries);
+  }
+
   useEffect(() => {
-    (async () => {
-      const logEntries = await listLogEntries(); 
-      setLogEntries(logEntries); 
-    })(); 
+    getEntries(); 
   }, []); 
 
   const showAddMarkerPopup = (event) => {
@@ -48,10 +50,9 @@ const App = () => {
       >
         {
           logEntries.map(entry => (
-            <>
+            <React.Fragment key={entry._id}>
               {/*the offset below centers the marker svg based on the 20px size of the svg*/}
               <Marker 
-                key={entry._id} 
                 latitude={entry.latitude} 
                 longitude={entry.longitude} 
                 offsetLeft={-10}
@@ -88,32 +89,32 @@ const App = () => {
                     closeOnClick={false}
                     onClose={() => setShowPopup({})}
                     anchor='top'
+                    maxWidth='none'
                   >
-                    <div className='container log-details-popup text-center'>
-                      <div className='row'>
-                        <div className='col'>
-                          <div style={{padding: '.5rem'}}>
-                            <h4>{entry.title}</h4>
-                          </div>
-                          <div style={{paddingTop: '1rem', paddingBottom: '.5rem'}}>
-                            <img alt={entry.title + ' image'} className='log-image' src={entry.image}></img>
-                          </div>
-                          <div style={{padding: '.5rem'}}>
-                            {entry.description}
-                          </div>
-                          <div style={{padding: '.5rem'}}>
-                            <div>Rating:</div>
-                            <h5 className='rating'>{entry.vacation_rating}/10</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <Card className='log-card text-center' style={{margin: '2rem'}}>
+                      <CardBody>
+                        <CardTitle><h4>{entry.title}</h4></CardTitle>
+                        {
+                          entry.image ? 
+                            <CardImg style={{marginTop: '.5rem', marginBottom: '.5rem'}} alt={entry.title} className='log-image' src={entry.image} />
+                          : 
+                          null
+                        }
+                        <CardSubtitle style={{marginTop: '1rem', marginBottom: '1rem'}}>{entry.description}</CardSubtitle>
+                        {
+                          entry.vacation_rating ? 
+                          <CardSubtitle style={{marginTop: '.5rem'}}><h5>Rating: {entry.vacation_rating}/10</h5></CardSubtitle>
+                          :
+                          null
+                        }   
+                        </CardBody>
+                      </Card>
                   </Popup>
                 )
                 : 
                 null
               }
-            </>
+            </React.Fragment>
           ))
         }
         {
@@ -132,7 +133,7 @@ const App = () => {
                         viewBox='0 0 24 24' 
                         width='20' 
                         height='20' 
-                        stroke='magenta' 
+                        stroke='#F1D11E' 
                         strokeWidth='3' fill='none' 
                         strokeLinecap='round' 
                         strokeLinejoin='round'>
@@ -152,6 +153,10 @@ const App = () => {
               >
                 <div className='popup-form'>
                     <LogEntryComponent 
+                      onClose={() => {
+                        setAddEntryLocation(null); 
+                        getEntries(); 
+                      }}
                       location={addEntryLocation}
                     />
                 </div>

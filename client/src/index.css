@@ -9,32 +9,20 @@ body {
 }
 
 .log-image {
-  max-width: 300px;
-  height: auto;
-  width: auto; 
-  border-radius: 5%;
-}
-
-.log-details-popup {
-  max-width: 350px; 
-  max-height: 500px;
-}
-
-.popup-form {
-  width: 350px;
-  max-height: 500px;
-}
-
-.rating {
-  font-weight: bold;
-}
-
-input {
-  border-radius: 5%;
-  margin: 1rem; 
-}
-
-button {
+  max-width: 15rem;
+  max-height: 15rem;
   border-radius: 5%; 
+}
+
+.error {
+  color: 'red'; 
+}
+
+.log-entry-form {
+  width: 20rem;
+}
+
+.log-card {
+  max-width: 20rem; 
 }
 
