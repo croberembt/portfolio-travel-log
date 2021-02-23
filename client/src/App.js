@@ -5,8 +5,6 @@ import { listLogEntries } from './api';
 import LogEntryComponent from './components/LogEntryComponent'; 
 import { Card, CardBody, CardImg, CardTitle, CardSubtitle } from 'reactstrap'; 
 
-// redid styling on log entry form with bootstrap instead of reactstrap in order for it to be compatible with react-hook-form
-
 const App = () => {
 
   const [logEntries, setLogEntries] = useState([]); 
@@ -82,6 +80,7 @@ const App = () => {
               {
                 showPopup[entry._id] ? (
                   <Popup
+                    className='popup'
                     dynamicPosition={true}
                     latitude={entry.latitude}
                     longitude={entry.longitude}
@@ -143,6 +142,7 @@ const App = () => {
                 </div>
               </Marker>
               <Popup
+                  className='popup'
                   dynamicPosition={true}
                   latitude={addEntryLocation.latitude}
                   longitude={addEntryLocation.longitude}

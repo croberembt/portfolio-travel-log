@@ -8,21 +8,27 @@ body {
   overflow: hidden; 
 }
 
-.log-image {
-  max-width: 15rem;
-  max-height: 15rem;
-  border-radius: 5%; 
-}
-
 .error {
   color: 'red'; 
+}
+
+.log-card {
+  max-width: 20rem; 
 }
 
 .log-entry-form {
   width: 20rem;
 }
 
-.log-card {
-  max-width: 20rem; 
+.log-image {
+  max-width: 15rem;
+  max-height: 15rem;
+  border-radius: 5%; 
+}
+
+/*below makes popup appear closer so that the other map markers do not appear through the popup*/
+
+.popup {
+  z-index: 1;
 }
 
