@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "name": "portfolio-travel-log",
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "src/index.js"
+    }
+  ],
+  "alias": [
+    "portfolio-travel-log"
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "PORT": "1337",
+    "DATABASE_URL": "@travel-log-db",
+    "CORS_ORIGIN": "https://react-travel-log.now.sh"
+  }
+}

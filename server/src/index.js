@@ -40,3 +40,5 @@ const port = process.env.PORT || 1337;
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}`); 
 }); 
+
+/*MAY NEED TO SET NEW SECRET WITH MONGO DB URL IN SINGLE QUOTES -- WILL DEFINITELY NEED TO SET CORS ORIGIN --- WILL NEED TO DEPLOY BACK END WITH NOW.SH*/
