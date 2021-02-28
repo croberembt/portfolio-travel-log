@@ -1,4 +1,4 @@
-const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:1337' : 'BACK END URL GOES HERE'; 
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:1337' : 'https://portfolio-travel-log.now.sh'; 
 
 export async function listLogEntries() {
   const response = await fetch(`${API_URL}/api/logs`);

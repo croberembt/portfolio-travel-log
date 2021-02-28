@@ -20,6 +20,6 @@
     "NODE_ENV": "production",
     "PORT": "1337",
     "DATABASE_URL": "@travel-log-db",
-    "CORS_ORIGIN": "https://react-travel-log.now.sh"
+    "CORS_ORIGIN": "https://react-travel-log.vercel.app"
   }
 }
