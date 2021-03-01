@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "portfolio-travel-log",
+  "name": "react-travel-log",
   "builds": [
     {
       "src": "src/index.js",
@@ -14,7 +14,7 @@
     }
   ],
   "alias": [
-    "portfolio-travel-log"
+    "react-travel-log"
   ],
   "env": {
     "NODE_ENV": "production",
