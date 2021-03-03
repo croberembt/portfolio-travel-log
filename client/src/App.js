@@ -42,7 +42,7 @@ const App = () => {
       <ReactMapGL
         {...viewport}
         mapStyle='mapbox://styles/calcifer2021/ckjx74nhx1gdc17ncj4gappdq' 
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        mapboxApiAccessToken='pk.eyJ1IjoiY2FsY2lmZXIyMDIxIiwiYSI6ImNrangyZzVseTAwYXMybnFnbzR6aW0yYmMifQ.1AfmKAIl77lhLWmOQKoa2Q'
         onViewportChange={setViewport}
         onDblClick={showAddMarkerPopup}
       >

@@ -12,6 +12,7 @@ const logs = require('./api/logs');
 
 const app = express();
 
+console.log(process.env.DATABASE_URL); 
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
@@ -38,7 +39,5 @@ app.use(middlewares.errorHandler);
 
 const port = process.env.PORT || 1337; 
 app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`); 
+    console.log(`Listening at http://localhost:${port}`);
 }); 
-
-/* -- MAKE SURE CORS ORIGIN MATCHES NAME OF CLIENT --- */
