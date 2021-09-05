@@ -3,7 +3,7 @@
   "name": "oberembt-travel-log",
   "builds": [
     {
-      "src": "*",
+      "src": "../build",
       "use": "@now/static"
     }
   ],
