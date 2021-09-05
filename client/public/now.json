@@ -1,6 +1,4 @@
 {
-  "version": 2,
-  "alias": [
-    "oberembt-travel-log"
-  ]
+  "name": "oberembt-travel-log",
+  "version": 2
 }
