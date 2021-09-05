@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "react-travel-log",
+  "name": "travel-log-server",
   "builds": [
     {
       "src": "src/index.js",
@@ -13,13 +13,10 @@
       "dest": "src/index.js"
     }
   ],
-  "alias": [
-    "react-travel-log"
-  ],
   "env": {
     "NODE_ENV": "production",
     "PORT": "1337",
     "DATABASE_URL": "@travel-log-db",
-    "CORS_ORIGIN": "https://react-travel-log-o9erabuoq-croberembt.vercel.app/"
+    "CORS_ORIGIN": "https://react-travel-log-croberembt.vercel.app"
   }
 }
