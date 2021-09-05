@@ -5,14 +5,12 @@ const cors = require ('cors');
 const mongoose = require('mongoose'); 
 
 const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, './.env') });
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const middlewares = require('./middlewares'); 
 const logs = require('./api/logs'); 
 
 const app = express();
-
-console.log(process.env.DATABASE_URL); 
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
