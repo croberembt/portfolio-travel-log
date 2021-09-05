@@ -1,4 +1,4 @@
-const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:1337' : 'https://oberembt-travel-log-server.vercel.app/'; 
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:1337' : 'https://oberembt-travel-log-server.vercel.app'; 
 
 console.log(API_URL); 
 

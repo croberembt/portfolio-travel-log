@@ -13,9 +13,13 @@
       "dest": "src/index.js"
     }
   ],
+  "alias": [
+    "oberembt-travel-log-server"
+  ],
   "env": {
     "NODE_ENV": "production",
     "PORT": "1337",
-    "DATABASE_URL": "@travel-log-db"
+    "DATABASE_URL": "@travel-log-db",
+    "CORS_ORIGIN": "https://oberembt-travel-log.vercel.app"
   }
 }
