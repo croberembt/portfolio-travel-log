@@ -17,6 +17,6 @@
     "NODE_ENV": "production",
     "PORT": "1337",
     "DATABASE_URL": "@travel-log-db",
-    "CORS_ORIGIN": "https://react-travel-log-croberembt.vercel.app"
+    "CORS_ORIGIN": "https://oberembt-travel-log.vercel.app/"
   }
 }
