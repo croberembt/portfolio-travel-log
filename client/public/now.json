@@ -1,4 +1,13 @@
 {
+  "version": 2,
   "name": "oberembt-travel-log",
-  "version": 2
+  "builds": [
+    {
+      "src": "*",
+      "use": "@now/static"
+    }
+  ],
+  "alias": [
+    "oberembt-travel-log"
+  ]
 }
