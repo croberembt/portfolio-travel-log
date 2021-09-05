@@ -3,7 +3,7 @@
   "name": "react-travel-log",
   "builds": [
     {
-      "src": "src",
+      "src": "src/index.js",
       "use": "@now/node-server"
     }
   ],
